@@ -5,35 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <div>
-        <h1>Welcome to Great North K9</h1>
-        <h2>Coming Soon</h2>
+<body class="centered animation-bg">
+    <div class="bg-image blurred"></div>
+    <div class="centered height-vh">
+        <div class="centered">
+            <h1 class="text-title text-main-style text-centered text-dropshadow animation-text">Welcome to Great North K9</h1>
+            <h2 class="text-subhead text-main-style text-centered text-dropshadow animation-text">Coming Soon</h2>
+        </div>
     </div>
-
+    <footer class="centered">
+        <p class="text-main-style">© Great North K9 2026</p>
+    </footer>
 </body>
 <style>
-    h1 {
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
+    .text-title {
         font-size: 3rem;
     }
-    h2 {
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
+    .text-subhead {
         font-size: 2rem;
     }
-    body {
-        background-color: #2e2e2e;
-
+    .text-footer {
+        font-size: .5rem;
     }
-    div {
-       display: flex;
+    .text-main-style {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .text-centered {
+        text-align: center;
+    }
+    body {
+        background-color: #545454;
+    }
+
+    .animation-bg {
+        animation: page-load-bg 1s;
+    }
+    .animation-text {
+        animation: page-load-text 3s;
+    }
+
+    .image-bg-centered {
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .bg-image {
+        background-image: url("images/background-wolf-transparent.png");
+
+        /* Fix the image to the viewport */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        /* Ensure it stays behind everything */
+        z-index: -1;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .blurred {
+        filter: blur(3px);
+    }
+    .centered {
+        display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
         align-items: center;
-        height: 100vh;
         justify-content: center;
+    }
+
+    .text-dropshadow {
+        text-shadow: 0 10px 10px black;
+    }
+
+    .height-vh {
+        height: 90vh;
+    }
+    .push {
+        flex: 1;
+    }
+
+    @keyframes page-load-bg {
+        0% {
+            background-color: #2e2e2e;
+        }
+        100% {
+            background-color: #545454;
+        }
+    }
+    @keyframes page-load-text {
+        0% {
+           opacity: 0%;
+        }
+        100% {
+            opacity: 100%;
+        }
     }
 </style>
 </html>
