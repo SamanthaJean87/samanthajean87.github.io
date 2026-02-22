@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body class="centered">
-    <div class="bg-image blurred"></div>
+    <div class="bg-image animation-blurred"></div>
     <div class="centered height-vh">
         <div class="centered">
-            <h1 class="text-title text-main-style text-centered text-dropshadow animation-text">Welcome to Great North K9</h1>
+            <h1 class="text-title text-main-style text-centered text-dropshadow">Welcome to Great North K9</h1>
             <h2 class="text-subhead text-main-style text-centered text-dropshadow animation-text">Coming Soon</h2>
         </div>
     </div>
@@ -39,10 +39,19 @@
     }
 
     .animation-bg {
-        animation: page-load-bg 1s;
+        animation: page-load-bg 1s ease-out;
+        animation-fill-mode: forwards;
     }
     .animation-text {
+        opacity: 0;
+        animation: page-load-text 1s ease-out;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .animation-text-delay {
         animation: page-load-text 3s;
+        animation-delay: 2s;
     }
 
     .image-bg-centered {
@@ -66,6 +75,12 @@
     }
     .blurred {
         filter: blur(3px);
+    }
+
+    .animation-blurred {
+        filter: blur(20px);
+        animation: blur-animation 2s;
+        animation-fill-mode: forwards;
     }
     .centered {
         display: flex;
@@ -95,13 +110,20 @@
         }
     }
     @keyframes page-load-text {
-        0% {
-           opacity: 0%;
+        from {
+           opacity: 0;
         }
-        100% {
-            opacity: 100%;
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes blur-animation {
+        from {
+            filter: blur(20px);
+        }
+        to {
+            filter: blur(3px);
         }
     }
 </style>
 </html>
-
